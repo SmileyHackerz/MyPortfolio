@@ -1,20 +1,32 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 🚀 Portfolio – Mohamed Faye
 
-# Run and deploy your AI Studio app
+Bienvenue sur mon portfolio personnel 👋  
+Ce site a été conçu pour présenter mon parcours, mes compétences et mes projets dans les domaines du développement web, des réseaux et de la cybersécurité.
 
-This contains everything you need to run your app locally.
+---
 
-View your app in AI Studio: https://ai.studio/apps/1221ee75-39ce-4011-b8ee-ae78b2bc962f
+## 🛠️ Technologies utilisées
 
-## Run Locally
+- ⚛️ React (Vite)
+- 🎨 Tailwind CSS
+- 💡 JavaScript
+- 🌐 HTML / CSS
+- 🔧 Git & GitHub
 
-**Prerequisites:**  Node.js
+---
 
+# Cloner le projet
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+git clone https://github.com/SmileyHackerz/MyPortfolio
+
+# Aller dans le dossier
+
+cd ton-repo
+
+# Installer les dépendances
+
+npm install
+
+# Lancer le projet
+
+npm run dev
