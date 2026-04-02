@@ -21,7 +21,7 @@ git clone https://github.com/SmileyHackerz/MyPortfolio
 
 # Aller dans le dossier
 
-cd ton-repo
+cd MyPortfolio
 
 # Installer les dépendances
 
