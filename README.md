@@ -1,38 +1,37 @@
-# 🚀 Portfolio – Mohamed Faye
+# Portfolio de Mohamed Faye
 
-Bienvenue sur mon portfolio personnel 👋  
-Ce site a été conçu pour présenter mon parcours, mes compétences et mes projets dans les domaines du développement web, des réseaux et de la cybersécurité.
+Portfolio personnel : développeur full-stack, étudiant en Licence 3 Informatique à l'ESP de Dakar.
 
----
+React 19, Vite 6, TypeScript, Tailwind CSS 4, Motion. Site statique une page, en français, thème sombre.
 
-## 🛠️ Technologies utilisées
-
-- ⚛️ React (Vite)
-- 🎨 Tailwind CSS
-- 💡 JavaScript
-- 🌐 HTML / CSS
-- 🔧 Git & GitHub
-
----
-
-# Cloner le projet
-
-git clone https://github.com/SmileyHackerz/MyPortfolio
-
-# Aller dans le dossier
-
-cd MyPortfolio
-
-# Installer les dépendances
-
+```bash
 npm install
+npm run dev      # http://localhost:3000
+npm run build    # dist/
+npm run lint     # tsc --noEmit
+```
 
-# Lancer le projet
+## Où se trouve quoi
 
-npm run dev
+| | |
+| --- | --- |
+| Profil, contact, réseaux, stats | `src/data/profile.ts` |
+| Projets (états, stack, textes, captures, couleurs de scène) | `src/data/projects.ts` |
+| Compétences | `src/data/skills.ts` |
+| Parcours | `src/data/journey.ts` |
+| Couleurs, polices, surfaces navigateur, nappes de scène | `src/index.css` |
+| Le système visuel expliqué | `DESIGN.md` |
+| La vérité produit | `PRODUCT.md` |
 
----
+## Ajouter les médias d'un projet
 
-# Lien vers la page
+Déposer les fichiers dans `public/` puis renseigner `images` (et `video` si besoin) dans `src/data/projects.ts` :
 
-https://mohamed-faye-portfolio.vercel.app/
+```ts
+images: ['/projects-mci-1.png', '/projects-mci-2.png'],
+video: '/projects-mci.mp4',
+```
+
+La première image sert de couverture dans la scène ; toutes apparaissent dans la fiche (`#projet/<id>`).
+
+En développement, `?section=skills` monte une seule section (`home`, `projects`, `skills`, `journey`, `about`, `contact`).

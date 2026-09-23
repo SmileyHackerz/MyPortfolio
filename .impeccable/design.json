@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-21T00:00:00Z",
+  "title": "Design System: Portfolio Mohamed Faye",
+  "extensions": {
+    "colorMeta": {
+      "nuit-profonde": { "role": "neutral", "displayName": "Nuit profonde", "canonical": "#0B0F19", "tonalRamp": ["#0B0F19", "#111827", "#1F2937", "#374151", "#4B5563", "#6B7280", "#9CA3AF", "#E5E7EB"] },
+      "surface-ardoise": { "role": "neutral", "displayName": "Surface ardoise", "canonical": "#111827", "tonalRamp": ["#0B0F19", "#111827", "#1F2937", "#374151", "#4B5563", "#6B7280", "#9CA3AF", "#E5E7EB"] },
+      "bleu-signal": { "role": "primary", "displayName": "Bleu signal", "canonical": "#3B82F6", "tonalRamp": ["#172554", "#1E3A8A", "#1E40AF", "#1D4ED8", "#2563EB", "#3B82F6", "#60A5FA", "#DBEAFE"] },
+      "bleu-signal-clair": { "role": "primary", "displayName": "Bleu signal clair", "canonical": "#60A5FA", "tonalRamp": ["#172554", "#1E3A8A", "#1E40AF", "#2563EB", "#3B82F6", "#60A5FA", "#93C5FD", "#DBEAFE"] },
+      "vert-en-ligne": { "role": "secondary", "displayName": "Vert en ligne", "canonical": "#22C55E", "tonalRamp": ["#052E16", "#14532D", "#166534", "#15803D", "#16A34A", "#22C55E", "#4ADE80", "#DCFCE7"] },
+      "ambre-interne": { "role": "tertiary", "displayName": "Ambre interne", "canonical": "#F59E0B", "tonalRamp": ["#451A03", "#78350F", "#92400E", "#B45309", "#D97706", "#F59E0B", "#FBBF24", "#FEF3C7"] },
+      "texte-givre": { "role": "neutral", "displayName": "Texte givré", "canonical": "#E5E7EB", "tonalRamp": ["#111827", "#1F2937", "#374151", "#4B5563", "#6B7280", "#9CA3AF", "#D1D5DB", "#E5E7EB"] },
+      "texte-sourdine": { "role": "neutral", "displayName": "Texte sourdine", "canonical": "#9CA3AF", "tonalRamp": ["#111827", "#1F2937", "#374151", "#4B5563", "#6B7280", "#9CA3AF", "#D1D5DB", "#F3F4F6"] },
+      "filet-ardoise": { "role": "neutral", "displayName": "Filet ardoise", "canonical": "#1F2937", "tonalRamp": ["#0B0F19", "#111827", "#1F2937", "#374151", "#4B5563", "#6B7280", "#9CA3AF", "#E5E7EB"] },
+      "filet-blanc-06": { "role": "neutral", "displayName": "Filet blanc 6 %", "canonical": "rgba(255,255,255,0.06)", "tonalRamp": ["rgba(255,255,255,0.03)", "rgba(255,255,255,0.05)", "rgba(255,255,255,0.06)", "rgba(255,255,255,0.10)", "rgba(255,255,255,0.15)", "rgba(255,255,255,0.25)", "rgba(255,255,255,0.40)", "rgba(255,255,255,0.70)"] },
+      "filet-blanc-10": { "role": "neutral", "displayName": "Filet blanc 10 %", "canonical": "rgba(255,255,255,0.10)", "tonalRamp": ["rgba(255,255,255,0.03)", "rgba(255,255,255,0.05)", "rgba(255,255,255,0.06)", "rgba(255,255,255,0.10)", "rgba(255,255,255,0.15)", "rgba(255,255,255,0.25)", "rgba(255,255,255,0.40)", "rgba(255,255,255,0.70)"] },
+      "filet-blanc-15": { "role": "neutral", "displayName": "Filet blanc 15 %", "canonical": "rgba(255,255,255,0.15)", "tonalRamp": ["rgba(255,255,255,0.03)", "rgba(255,255,255,0.05)", "rgba(255,255,255,0.06)", "rgba(255,255,255,0.10)", "rgba(255,255,255,0.15)", "rgba(255,255,255,0.25)", "rgba(255,255,255,0.40)", "rgba(255,255,255,0.70)"] },
+      "filigrane-blanc-07": { "role": "neutral", "displayName": "Filigrane blanc 7 %", "canonical": "rgba(255,255,255,0.07)", "tonalRamp": ["rgba(255,255,255,0.03)", "rgba(255,255,255,0.05)", "rgba(255,255,255,0.07)", "rgba(255,255,255,0.10)", "rgba(255,255,255,0.15)", "rgba(255,255,255,0.25)", "rgba(255,255,255,0.40)", "rgba(255,255,255,0.70)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Le nom au hero, une ligne par mot, la seconde en bleu. Nulle part ailleurs." },
+      "scene-title": { "displayName": "Titre de scène", "purpose": "Titre court de chaque scène projet, révélé par masque." },
+      "headline": { "displayName": "Headline", "purpose": "Titres de section ; la seconde proposition en sourdine dans le même h2. Monte à 4.5rem au contact en lg." },
+      "title": { "displayName": "Title", "purpose": "Étapes du parcours, nom sur la carte profil, titre de fiche." },
+      "lead": { "displayName": "Lead", "purpose": "Phrase du hero, résumé de scène, accroches de section. 46 à 58ch." },
+      "body": { "displayName": "Body", "purpose": "Paragraphes de parcours, fiche, À propos. 52 à 65ch." },
+      "label": { "displayName": "Label mono", "purpose": "Données courtes en capitales : état, période, contexte, dt. Jamais une accroche." },
+      "chip": { "displayName": "Chip mono", "purpose": "Technologies." },
+      "watermark": { "displayName": "Filigrane", "purpose": "Année géante derrière chaque étape du parcours, desktop seulement, blanc 7 %." }
+    },
+    "shadows": [
+      { "name": "carte-posee", "value": "0 40px 100px -30px rgba(0,0,0,0.8)", "purpose": "Carte profil du hero." },
+      { "name": "media-pose", "value": "0 30px 80px -20px rgba(0,0,0,0.7)", "purpose": "Capture de couverture d'une scène projet." },
+      { "name": "nav-scrollee", "value": "0 10px 15px -3px rgba(0,0,0,0.3), 0 4px 6px -4px rgba(0,0,0,0.3)", "purpose": "Pilule de navigation quand scrollY > 40." },
+      { "name": "led-verte", "value": "0 0 10px rgba(34,197,94,0.8)", "purpose": "Halo de la LED En ligne." },
+      { "name": "led-ambre", "value": "0 0 10px rgba(245,158,11,0.8)", "purpose": "Halo de la LED Projet interne." },
+      { "name": "led-bleue", "value": "0 0 10px rgba(59,130,246,0.8)", "purpose": "Halo de la LED Bientôt en ligne." }
+    ],
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Toute révélation au défilement, masques de titre, figures, timeline." },
+      { "name": "ease-chrome", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Entrée de la nav et sortie du boot uniquement." },
+      { "name": "reveal", "value": "opacity 0→1, y 12..40→0, 0.6..1s, viewport once, amount 0.3..0.6", "purpose": "Révélation standard de bloc." },
+      { "name": "hero-stagger", "value": "staggerChildren 0.12s, delayChildren 0.15s", "purpose": "Cascade du hero." },
+      { "name": "line-mask", "value": "y 110%→0% 1s (hero) ; y 105%→0% 0.9s (scène)", "purpose": "Ligne de titre montant sous un overflow-hidden." },
+      { "name": "scene-exit", "value": "scale 1→0.94, opacity 1→0.75→0.3, y 0→-40 sur scroll offset ['end 100vh','end start']", "purpose": "Recul de la scène recouverte par la suivante. Retiré sous reduced-motion." },
+      { "name": "wash-breathe", "value": "16s ease-in-out infinite alternate, scale 1→1.12, rotate 0→4deg", "purpose": "Respiration de la nappe, seulement quand data-active=true (scène en vue, marge 20 %)." },
+      { "name": "orbits", "value": "rotate 360 / -360, 90s / 60s linear", "purpose": "Deux anneaux du hero, desktop seulement." },
+      { "name": "spring-pill", "value": "spring stiffness 400..420, damping 30..34", "purpose": "Pilule partagée (layoutId) de la nav active et du filtre actif." },
+      { "name": "spring-node", "value": "spring stiffness 260, damping 18", "purpose": "Nœud de la timeline." },
+      { "name": "boot-exit", "value": "opacity 0, scale 1.08, filter blur(12px), 0.7s", "purpose": "Sortie de la séquence boot, une fois par session." },
+      { "name": "press", "value": "active:scale(0.98), transition background-color,transform", "purpose": "Tous les boutons pilule." },
+      { "name": "reduced-motion", "value": "initial=false, transforms retirés, animations 0.01ms, scroll-behavior auto", "purpose": "Dégradation obligatoire sous prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ],
+    "containers": [
+      { "name": "page", "value": "1280px" },
+      { "name": "fiche", "value": "1152px" },
+      { "name": "nav", "value": "896px" },
+      { "name": "boot", "value": "576px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Bouton principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Pilule givrée sur nuit, bleue au survol. CTA du hero, des scènes et de la fiche.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Voir les projets <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: 9999px; background: var(--color-foreground, #E5E7EB); color: var(--color-background, #0B0F19); font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 16px; font-weight: 500; text-decoration: none; transition: background-color 0.2s, transform 0.2s; } .ds-btn-primary svg { transition: transform 0.2s; } .ds-btn-primary:hover { background: var(--color-primary, #3B82F6); } .ds-btn-primary:hover svg { transform: translateX(2px); } .ds-btn-primary:active { transform: scale(0.98); } .ds-btn-primary:focus-visible { outline: 2px solid var(--color-primary, #3B82F6); outline-offset: 3px; border-radius: 6px; }"
+    },
+    {
+      "name": "Bouton secondaire",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Pilule bordée blanc 15 % sur surface translucide ; la bordure s'éclaircit au survol.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" x2=\"12\" y1=\"15\" y2=\"3\"/></svg> Télécharger le CV</a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.15); background: rgba(17,24,39,0.4); color: var(--color-foreground, #E5E7EB); font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 16px; font-weight: 500; text-decoration: none; transition: border-color 0.2s, transform 0.2s; } .ds-btn-secondary:hover { border-color: rgba(255,255,255,0.4); } .ds-btn-secondary:active { transform: scale(0.98); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--color-primary, #3B82F6); outline-offset: 3px; border-radius: 6px; }"
+    },
+    {
+      "name": "Pastille d'état",
+      "kind": "chip",
+      "refersTo": "status-pill",
+      "description": "LED littérale : vert En ligne, ambre Projet interne, bleu Bientôt en ligne, givré Code public sans halo.",
+      "html": "<div style=\"display:flex;flex-wrap:wrap;gap:8px\"><span class=\"ds-status ds-status-online\"><i></i>En ligne</span><span class=\"ds-status ds-status-internal\"><i></i>Projet interne</span><span class=\"ds-status ds-status-soon\"><i></i>Bientôt en ligne</span><span class=\"ds-status ds-status-code\"><i></i>Code public</span></div>",
+      "css": ".ds-status { display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; border-radius: 9999px; border: 1px solid; background: rgba(11,15,25,0.6); font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; } .ds-status i { width: 6px; height: 6px; border-radius: 9999px; display: block; } .ds-status-online { color: #22C55E; border-color: rgba(34,197,94,0.3); } .ds-status-online i { background: #22C55E; box-shadow: 0 0 10px rgba(34,197,94,0.8); } .ds-status-internal { color: #F59E0B; border-color: rgba(245,158,11,0.3); } .ds-status-internal i { background: #F59E0B; box-shadow: 0 0 10px rgba(245,158,11,0.8); } .ds-status-soon { color: #3B82F6; border-color: rgba(59,130,246,0.3); } .ds-status-soon i { background: #3B82F6; box-shadow: 0 0 10px rgba(59,130,246,0.8); } .ds-status-code { color: rgba(229,231,235,0.8); border-color: rgba(255,255,255,0.15); } .ds-status-code i { background: rgba(229,231,235,0.8); }"
+    },
+    {
+      "name": "Chip techno",
+      "kind": "chip",
+      "refersTo": "chip-tech",
+      "description": "Pilule mono 12 px sans état pour une technologie.",
+      "html": "<div style=\"display:flex;flex-wrap:wrap;gap:8px\"><span class=\"ds-chip\">React</span><span class=\"ds-chip\">NestJS</span><span class=\"ds-chip\">PostgreSQL</span><span class=\"ds-chip\">Docker</span></div>",
+      "css": ".ds-chip { display: inline-block; padding: 4px 12px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.10); background: rgba(11,15,25,0.7); color: rgba(229,231,235,0.85); font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace; font-size: 12px; }"
+    },
+    {
+      "name": "Filtres projets",
+      "kind": "chip",
+      "refersTo": "filter-pill-active",
+      "description": "Conteneur pilule bordé, onglet actif en pilule givrée partagée.",
+      "html": "<div class=\"ds-filters\" role=\"tablist\"><button class=\"ds-filter ds-filter-active\" role=\"tab\" aria-selected=\"true\">Tous</button><button class=\"ds-filter\" role=\"tab\">Full-stack</button><button class=\"ds-filter\" role=\"tab\">Web</button><button class=\"ds-filter\" role=\"tab\">Python</button></div>",
+      "css": ".ds-filters { display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 4px; border-radius: 9999px; border: 1px solid var(--color-border, #1F2937); background: rgba(17,24,39,0.6); } .ds-filter { padding: 8px 16px; border-radius: 9999px; border: 0; background: transparent; color: var(--color-muted, #9CA3AF); font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 14px; cursor: pointer; transition: color 0.2s; } .ds-filter:hover { color: var(--color-foreground, #E5E7EB); } .ds-filter-active, .ds-filter-active:hover { background: var(--color-foreground, #E5E7EB); color: var(--color-background, #0B0F19); } .ds-filter:focus-visible { outline: 2px solid var(--color-primary, #3B82F6); outline-offset: 3px; }"
+    },
+    {
+      "name": "Nav pilule",
+      "kind": "nav",
+      "refersTo": "nav-pill",
+      "description": "Navigation flottante en pilule floutée ; lien actif sous une pilule blanc 5 %, CTA givré.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-brand\" href=\"#\"><span class=\"ds-nav-mark\">MF</span>mohamed<em>.</em>faye</a><ul class=\"ds-nav-links\"><li><a class=\"ds-nav-link ds-nav-link-active\" href=\"#\">Projets</a></li><li><a class=\"ds-nav-link\" href=\"#\">Compétences</a></li><li><a class=\"ds-nav-link\" href=\"#\">Parcours</a></li><li><a class=\"ds-nav-link\" href=\"#\">Contact</a></li></ul><a class=\"ds-nav-cta\" href=\"#\">Me contacter</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; max-width: 896px; padding: 8px 8px 8px 20px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.05); background: rgba(17,24,39,0.4); backdrop-filter: blur(24px); font-family: Inter, ui-sans-serif, system-ui, sans-serif; } .ds-nav-brand { display: flex; align-items: center; gap: 10px; color: var(--color-foreground, #E5E7EB); font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 14px; letter-spacing: -0.025em; text-decoration: none; } .ds-nav-brand em { font-style: normal; color: var(--color-primary, #3B82F6); } .ds-nav-mark { width: 28px; height: 28px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.3); color: var(--color-primary, #3B82F6); font-size: 12px; font-weight: 700; transition: background-color 0.2s, color 0.2s; } .ds-nav-brand:hover .ds-nav-mark { background: var(--color-primary, #3B82F6); color: var(--color-background, #0B0F19); } .ds-nav-links { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0; } .ds-nav-link { display: inline-block; padding: 6px 14px; border-radius: 9999px; border: 1px solid transparent; color: var(--color-muted, #9CA3AF); font-size: 14px; text-decoration: none; transition: color 0.2s; } .ds-nav-link:hover { color: var(--color-foreground, #E5E7EB); } .ds-nav-link-active { color: var(--color-foreground, #E5E7EB); background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.10); } .ds-nav-cta { padding: 6px 16px; border-radius: 9999px; background: var(--color-foreground, #E5E7EB); color: var(--color-background, #0B0F19); font-size: 14px; font-weight: 500; text-decoration: none; transition: background-color 0.2s; } .ds-nav-cta:hover { background: var(--color-primary, #3B82F6); } .ds-nav a:focus-visible { outline: 2px solid var(--color-primary, #3B82F6); outline-offset: 3px; border-radius: 6px; }"
+    },
+    {
+      "name": "Carte profil",
+      "kind": "card",
+      "refersTo": "card-profile",
+      "description": "Carte Nova : photo, pastille Disponible, nom, trois stats tabulaires, pied réseaux + lien.",
+      "html": "<div class=\"ds-profile\"><div class=\"ds-profile-photo\"><span class=\"ds-profile-avail\"><i></i>Disponible</span></div><div class=\"ds-profile-body\"><p class=\"ds-profile-name\">Mohamed Faye</p><p class=\"ds-profile-title\">Développeur full-stack</p><div class=\"ds-profile-stats\"><div><b>6</b><small>projets livrés</small></div><div><b>L3</b><small>Informatique</small></div><div><b>2</b><small>clients réels</small></div></div><div class=\"ds-profile-foot\"><span>GitHub · LinkedIn</span><a href=\"#\">Me contacter →</a></div></div></div>",
+      "css": ".ds-profile { max-width: 448px; padding: 12px; border-radius: 24px; border: 1px solid rgba(255,255,255,0.10); background: rgba(17,24,39,0.6); backdrop-filter: blur(24px); box-shadow: 0 40px 100px -30px rgba(0,0,0,0.8); font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: var(--color-foreground, #E5E7EB); } .ds-profile-photo { position: relative; height: 224px; border-radius: 16px; background: linear-gradient(to top, #111827, transparent 60%), #0B0F19; } .ds-profile-avail { position: absolute; top: 12px; left: 12px; display: inline-flex; align-items: center; gap: 8px; padding: 4px 10px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.10); background: rgba(11,15,25,0.7); color: #22C55E; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; } .ds-profile-avail i { width: 6px; height: 6px; border-radius: 9999px; background: #22C55E; } .ds-profile-body { padding: 16px 12px 8px; } .ds-profile-name { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.025em; } .ds-profile-title { margin: 0; font-size: 14px; color: var(--color-muted, #9CA3AF); } .ds-profile-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 20px; } .ds-profile-stats div { padding: 10px 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); background: rgba(11,15,25,0.6); } .ds-profile-stats b { display: block; font-size: 24px; font-weight: 700; letter-spacing: -0.025em; line-height: 1; font-variant-numeric: tabular-nums; } .ds-profile-stats small { display: block; margin-top: 6px; font-size: 11px; color: var(--color-muted, #9CA3AF); } .ds-profile-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.05); font-size: 14px; color: var(--color-muted, #9CA3AF); } .ds-profile-foot a { color: var(--color-primary, #3B82F6); font-weight: 500; text-decoration: none; transition: color 0.2s; } .ds-profile-foot a:hover { color: #22C55E; }"
+    },
+    {
+      "name": "Emplacement média en attente",
+      "kind": "card",
+      "refersTo": "card-media",
+      "description": "Cadre pointillé 16/10 qui marque une capture à venir sans l'inventer.",
+      "html": "<div class=\"ds-placeholder\" role=\"img\" aria-label=\"Captures à venir\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"2\" x2=\"22\" y1=\"2\" y2=\"22\"/><path d=\"M10.41 10.41a2 2 0 1 1-2.83-2.83\"/><line x1=\"13.5\" x2=\"6\" y1=\"13.5\" y2=\"21\"/><line x1=\"18\" x2=\"21\" y1=\"12\" y2=\"15\"/><path d=\"M3.59 3.59A1.99 1.99 0 0 0 3 5v14a2 2 0 0 0 2 2h14c.55 0 1.052-.22 1.41-.59\"/><path d=\"M21 15V5a2 2 0 0 0-2-2H9\"/></svg><span>Captures à venir</span></div>",
+      "css": ".ds-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; width: 100%; max-width: 512px; aspect-ratio: 16 / 10; border-radius: 24px; border: 1px dashed rgba(255,255,255,0.15); background: rgba(11,15,25,0.4); color: var(--color-muted, #9CA3AF); } .ds-placeholder span { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; }"
+    },
+    {
+      "name": "Titre de section",
+      "kind": "custom",
+      "refersTo": "headline",
+      "description": "Inter 700 serré, seconde proposition en sourdine dans le même h2, sans étiquette au-dessus.",
+      "html": "<h2 class=\"ds-headline\">Six projets, <span>six chapitres.</span></h2><p class=\"ds-lead\">Des applications livrées pour de vrais besoins. Chaque projet porte son état réel et sa fiche.</p>",
+      "css": ".ds-headline { margin: 0; max-width: 672px; font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: clamp(2.25rem, 5vw, 3.75rem); font-weight: 700; line-height: 0.95; letter-spacing: -0.04em; color: var(--color-foreground, #E5E7EB); text-wrap: balance; } .ds-headline span { color: var(--color-muted, #9CA3AF); } .ds-lead { margin: 20px 0 0; max-width: 58ch; font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 18px; line-height: 1.625; color: var(--color-muted, #9CA3AF); }"
+    },
+    {
+      "name": "Ligne de contact",
+      "kind": "custom",
+      "refersTo": "body",
+      "description": "Rangée bordée de filets blancs : icône ronde, libellé, valeur grande, flèche ; tient à 390 px.",
+      "html": "<a class=\"ds-contact\" href=\"#\"><span class=\"ds-contact-icon\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"20\" height=\"16\" x=\"2\" y=\"4\" rx=\"2\"/><path d=\"m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7\"/></svg></span><span class=\"ds-contact-text\"><small>E-mail</small><strong>fayemohamed82@gmail.com</strong></span><svg class=\"ds-contact-arrow\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></a>",
+      "css": ".ds-contact { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px; padding: 28px 16px; border-top: 1px solid rgba(255,255,255,0.10); border-bottom: 1px solid rgba(255,255,255,0.10); border-radius: 16px; color: var(--color-foreground, #E5E7EB); font-family: Inter, ui-sans-serif, system-ui, sans-serif; text-decoration: none; transition: background-color 0.2s; } .ds-contact:hover { background: rgba(255,255,255,0.02); } .ds-contact-icon { width: 44px; height: 44px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.10); background: rgba(17,24,39,0.6); display: flex; align-items: center; justify-content: center; color: var(--color-muted, #9CA3AF); transition: color 0.2s, border-color 0.2s; } .ds-contact:hover .ds-contact-icon { color: var(--color-primary, #3B82F6); border-color: rgba(59,130,246,0.4); } .ds-contact-text { min-width: 0; } .ds-contact-text small { display: block; font-size: 14px; color: var(--color-muted, #9CA3AF); } .ds-contact-text strong { display: block; overflow-wrap: anywhere; font-size: clamp(0.95rem, 2.5vw, 1.875rem); font-weight: 600; letter-spacing: -0.025em; } .ds-contact-arrow { color: var(--color-muted, #9CA3AF); transition: color 0.2s, transform 0.2s; } .ds-contact:hover .ds-contact-arrow { color: var(--color-foreground, #E5E7EB); transform: translate(2px, -2px); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Le terminal qui s'ouvre sur six scènes",
+    "overview": "Le site est un terminal sombre qui, une fois démarré, laisse la place à un nom géant puis à six projets traversés comme six chapitres plein écran. Tout part du fond nuit (#0B0F19) : la lumière vient de deux accents seulement, un bleu de signal et un vert « en ligne », plus un ambre strictement réservé à l'état « projet interne ». La densité est faible et l'échelle typographique très contrastée : des titres Inter serrés à 8 rem face à des étiquettes mono de 11 px. Le monde ne se distingue pas par des cartes en verre alignées mais par des nappes de couleur propres à chaque projet, un grain fixe et un empilement collant des scènes.\n\nL'identité « terminal / tech » est assumée sans être cosplayée : le prompt `mfaye@portfolio:~`, les labels mono en capitales espacées et le point-LED d'état sont les seuls artefacts de console. Le reste est un site éditorial sombre et lisible sur un téléphone. Le bento uniforme et le style « aurora » ont été rejetés explicitement ; le hero VELOS (nom + carte profil) et la carte profil Nova ont été retenus comme références contraignantes.",
+    "keyCharacteristics": [
+      "Thème sombre unique, jamais de mode clair ; le fond nuit est le matériau, pas un « dark mode ».",
+      "Deux accents fonctionnels (bleu, vert) + un ambre d'état ; les boutons principaux sont blancs givrés, pas colorés.",
+      "Inter très serré (-0.04 à -0.045em) pour tout ce qui est grand ; JetBrains Mono uniquement pour les étiquettes de données.",
+      "Pilules pour tout ce qui se clique, 24 px pour les cartes, 16 px pour ce qu'elles contiennent.",
+      "Profondeur par nappes de couleur, filets blancs translucides et une seule ombre portée large et sombre.",
+      "Motion à courbe expo-out unique, toujours dégradée sous `prefers-reduced-motion`."
+    ],
+    "rules": [
+      { "name": "La règle de l'accent qui informe", "body": "Bleu, vert et ambre n'apparaissent que là où ils signifient quelque chose (état, lien, position active, focus) ou dans une nappe de scène. Un bouton au repos est blanc givré sur nuit ; le bleu n'arrive qu'au survol.", "section": "colors" },
+      { "name": "La règle de l'ambre interne", "body": "L'ambre n'existe que pour l'état « Projet interne » et la nappe de MCI. Toute autre apparition est une faute.", "section": "colors" },
+      { "name": "La règle des filets blancs", "body": "Les bordures sont des blancs translucides à 6, 10 ou 15 %, jamais des gris opaques, sauf le `filet-ardoise` sur les conteneurs opaques (nav scrollée, filtres, scrollbar).", "section": "colors" },
+      { "name": "La règle de la seconde proposition", "body": "Un titre de section ne porte pas d'étiquette au-dessus ; sa nuance vient d'une seconde proposition en sourdine dans le même h2.", "section": "typography" },
+      { "name": "La règle du mono qui étiquette", "body": "Le mono n'écrit que des données courtes : état, période, contexte, techno, prompt. Jamais un titre, jamais un paragraphe.", "section": "typography" },
+      { "name": "La règle des chiffres tabulaires", "body": "Toute valeur numérique alignée (stats, index de fiche) porte `font-variant-numeric: tabular-nums`.", "section": "typography" },
+      { "name": "La règle de la nappe sans flou", "body": "Une nappe de scène est trois dégradés radiaux déjà doux (`.scene-wash`, `inset: -20%`, opacité 0.7, `contain: paint`). Aucun `filter: blur` dessus : six scènes empilées ne le supportent pas. Le flou (`blur-[120px]` à `blur-[140px]`) reste permis sur les halos isolés du hero, du boot et du contact, qui ne s'empilent pas.", "section": "elevation" },
+      { "name": "La règle du grain unique", "body": "Un seul calque de grain, fixé au viewport (`z-index 60`), au-dessus de la page et de la nav (`z-index 50`), sous le boot (`z-index 100`). Il ne se répète pas par section.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do garder le fond `#0B0F19` comme unique fond de page et de scène ; les surfaces sont des translucidités d'ardoise ou de nuit, pas de nouveaux gris.",
+      "Do réserver l'ambre à l'état « Projet interne » et à la nappe MCI, le vert à « En ligne / Disponible / OK », le bleu au lien, au focus, à l'actif et à « Bientôt en ligne ».",
+      "Do mettre en pilule tout ce qui se clique, en 24 px toute carte, en 16 px ce qu'elle contient.",
+      "Do écrire un titre de section en Inter 700, -0.04em, interligne 0.95, avec sa nuance en seconde proposition sourdine dans le même h2.",
+      "Do utiliser le mono 11 px capitales 0.16em uniquement pour une donnée courte (état, période, contexte, `dt`).",
+      "Do marquer un média manquant par l'emplacement pointillé « Captures à venir » plutôt que par une image.",
+      "Do utiliser `cubic-bezier(0.16, 1, 0.3, 1)` pour toute révélation, `viewport once`, et couper toute animation sous `prefers-reduced-motion`.",
+      "Do rythmer les sections en `py-28` / `lg:py-40` dans un conteneur `max-w-7xl` aux gouttières 16 / 24 / 32 px.",
+      "Do donner un `overflow-wrap: anywhere` et une taille mobile réduite à toute valeur longue (e-mail, numéro) pour tenir à 390 px."
+    ],
+    "donts": [
+      "Don't utiliser de texte en dégradé ; le nom est givré puis bleu plein, jamais un `background-clip: text`.",
+      "Don't poser d'étiquette, kicker ou eyebrow au-dessus d'un titre de section.",
+      "Don't écrire de tiret cadratin ; les incises passent par la virgule, les deux-points ou le point médian `·`.",
+      "Don't ajouter de point décoratif dans un libellé ou une pastille : un point rond dans une pastille est une LED et porte un état.",
+      "Don't appliquer `filter: blur` à une nappe de scène ou à tout calque qui s'empile ; le flou reste aux halos isolés du hero, du boot et du contact.",
+      "Don't inventer de capture, de vidéo, de témoignage ou de chiffre d'impact ; l'emplacement pointillé attend les vrais médias.",
+      "Don't colorer un bouton au repos : le fond est givré, le bleu n'arrive qu'au survol (seule exception : le CTA du menu mobile).",
+      "Don't afficher de barre de niveau ou de pourcentage de compétence.",
+      "Don't introduire de mode clair, de police système en titre ou d'icône glyphe : Inter et JetBrains Mono, icônes Lucide en trait de 14 à 24 px.",
+      "Don't empiler un second grain, une seconde ombre ou une bordure grise opaque sur une carte ; un filet blanc translucide suffit."
+    ]
+  }
+}
