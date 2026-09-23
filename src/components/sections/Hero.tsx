@@ -97,23 +97,26 @@ export default function Hero() {
             className="lg:col-span-5 lg:justify-self-end w-full max-w-md"
           >
             <div className="panel p-3">
-              <div className="relative h-[clamp(14rem,44dvh,26rem)] w-full overflow-hidden rounded-2xl bg-white">
+              <div className="relative mx-auto aspect-[928/1141] w-[min(100%,calc(52dvh*0.813))] overflow-hidden rounded-2xl bg-white">
                 <img
                   src={profile.portrait}
                   alt={`${profile.firstName} ${profile.lastName}`}
-                  className="h-full w-full object-cover object-[52%_8%]"
+                  className="h-full w-full object-cover"
                   fetchPriority="high"
                   width={928}
                   height={1141}
                 />
-                {/* Pastille sombre : le portrait est sur fond clair, l'inverse serait illisible */}
-                <span className="absolute left-3 top-3 flex items-center gap-2 rounded-full border border-white/10 bg-background/85 px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.16em] text-secondary backdrop-blur">
-                  <span className="h-1.5 w-1.5 rounded-full bg-secondary" aria-hidden />
-                  {profile.availableLabel}
-                </span>
+                {/* Le cadre garde le format exact de la photo et se dimensionne en hauteur :
+                    un portrait de profil ne survit à aucun recadrage, et les marges tombent
+                    sur le fond de la carte plutôt que de laisser voir les bords du fichier. */}
               </div>
 
               <div className="px-3 pb-2 pt-4">
+                <p className="mb-3 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-secondary">
+                  <span className="h-1.5 w-1.5 rounded-full bg-secondary" aria-hidden />
+                  {profile.availableLabel}
+                </p>
+
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <p className="text-xl font-bold tracking-tight text-foreground">
