@@ -8,7 +8,7 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground selection:bg-primary selection:text-foreground">
+    <div className="flex min-h-[100dvh] flex-col text-foreground">
       <Navbar />
       <main className="flex-grow">
         {children}

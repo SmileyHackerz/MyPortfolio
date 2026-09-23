@@ -1,22 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-  
+
   --color-background: #0B0F19;
   --color-surface: #111827;
   --color-primary: #3B82F6;
   --color-secondary: #22C55E;
+  --color-amber: #F59E0B;
   --color-foreground: #E5E7EB;
   --color-muted: #9CA3AF;
   --color-border: #1F2937;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem; /* Accounts for the fixed navbar */
+  scroll-padding-top: 6rem;
+  color-scheme: dark;
 }
 
 body {
@@ -25,22 +28,157 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  caret-color: var(--color-primary);
 }
 
+/* ── Surfaces navigateur ── */
 ::selection {
-  background-color: var(--color-primary);
-  color: var(--color-foreground);
+  background-color: color-mix(in oklab, var(--color-primary) 70%, white);
+  color: var(--color-background);
 }
 
-@keyframes loop {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 999px;
+  border: 3px solid var(--color-background);
+}
+::-webkit-scrollbar-thumb:hover { background: #374151; }
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: 6px;
 }
 
-.animate-loop {
-  animation: loop linear infinite;
+a { text-underline-offset: 0.2em; }
+
+.tabular { font-variant-numeric: tabular-nums; }
+
+/* ── Environnement : champ d'étoiles fixe derrière toute la page ── */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1.2px 1.2px at 12% 18%, rgba(226, 232, 240, 0.55), transparent 100%),
+    radial-gradient(1px 1px at 27% 62%, rgba(59, 130, 246, 0.6), transparent 100%),
+    radial-gradient(1.4px 1.4px at 41% 9%, rgba(226, 232, 240, 0.4), transparent 100%),
+    radial-gradient(1px 1px at 58% 74%, rgba(226, 232, 240, 0.45), transparent 100%),
+    radial-gradient(1.1px 1.1px at 69% 28%, rgba(34, 197, 94, 0.5), transparent 100%),
+    radial-gradient(1px 1px at 81% 55%, rgba(226, 232, 240, 0.4), transparent 100%),
+    radial-gradient(1.3px 1.3px at 90% 12%, rgba(226, 232, 240, 0.5), transparent 100%),
+    radial-gradient(1px 1px at 8% 84%, rgba(59, 130, 246, 0.45), transparent 100%),
+    radial-gradient(1px 1px at 34% 38%, rgba(226, 232, 240, 0.3), transparent 100%),
+    radial-gradient(1px 1px at 74% 91%, rgba(226, 232, 240, 0.35), transparent 100%);
+  background-repeat: repeat;
+  background-size: 620px 620px;
 }
 
-.animate-loop-reverse {
-  animation: loop linear infinite reverse;
+#root { position: relative; z-index: 1; }
+
+/* ── Matière : panneaux et tuiles du monde spatial ── */
+.panel {
+  position: relative;
+  border-radius: 1.5rem;
+  border: 1px solid rgb(255 255 255 / 0.08);
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.045) 0%, rgb(255 255 255 / 0.012) 40%, rgb(255 255 255 / 0) 100%),
+    rgb(17 24 39 / 0.55);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.07),
+    0 28px 70px -40px rgb(0 0 0 / 0.9);
+}
+
+.tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  border: 1px solid rgb(255 255 255 / 0.09);
+  background: linear-gradient(180deg, rgb(255 255 255 / 0.06), rgb(255 255 255 / 0.015));
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.08);
+}
+
+/* Trame technique des panneaux, comme un fond de schéma */
+.schematic {
+  background-image: radial-gradient(circle at 1px 1px, rgb(255 255 255 / 0.05) 1px, transparent 0);
+  background-size: 22px 22px;
+}
+
+/* Filet qui s'éteint sur les bords */
+.hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.14) 20%, rgb(255 255 255 / 0.14) 80%, transparent);
+}
+
+/* ── Grain fixe, jamais sur un conteneur qui scrolle ── */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  /* Pas de mix-blend-mode : mélanger un calque plein écran à chaque image coûte
+     autant que tout le reste de la page réuni. L'opacité seule donne le même grain. */
+  opacity: 0.05;
+  /* Bruit pré-calculé en PNG : pas de filtre SVG à rasteriser, couche promue et peinte une fois */
+  transform: translateZ(0);
+  background-image: url('/grain.png');
+  background-size: 96px 96px;
+}
+
+/* ── Nappe de couleur d'une scène projet ── */
+.scene-wash {
+  position: absolute;
+  /* Plus de débord : sans rotation, la nappe n'a pas besoin de dépasser le cadre */
+  inset: 0;
+  /* Dégradés déjà doux : pas de filter blur, trop coûteux sur six scènes empilées */
+  background:
+    radial-gradient(60% 65% at var(--wash-x, 22%) var(--wash-y, 42%), color-mix(in oklab, var(--wash-a) 55%, transparent) 0%, transparent 70%),
+    radial-gradient(55% 60% at 78% 62%, color-mix(in oklab, var(--wash-b) 50%, transparent) 0%, transparent 68%),
+    radial-gradient(75% 55% at 50% 110%, color-mix(in oklab, var(--wash-a) 30%, var(--wash-b) 30%) 0%, transparent 65%);
+  opacity: 0.7;
+  contain: paint;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Pas d'animation sur la nappe : une couche animée de cette taille force le
+     navigateur à promouvoir tout ce qui la recouvre, soit des textures de la
+     hauteur de la page entière. Mesuré : 347 Mo de textures contre 74 Mo ici. */
+}
+
+/* ── Balayage lent d'une ligne de lecture sur les panneaux techniques ── */
+@media (prefers-reduced-motion: no-preference) {
+  .scan[data-active="true"]::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgb(59 130 246 / 0.5), transparent);
+    animation: scan-sweep 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    pointer-events: none;
+  }
+}
+
+@keyframes scan-sweep {
+  0% { top: 0; opacity: 0; }
+  12% { opacity: 1; }
+  88% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

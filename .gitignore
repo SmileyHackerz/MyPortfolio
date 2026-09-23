@@ -6,3 +6,8 @@ coverage/
 *.log
 .env*
 !.env.example
+.claude/
+.impeccable/review/*.png
+.impeccable/review/*.json
+.impeccable/review/err.txt
+.impeccable/questions/

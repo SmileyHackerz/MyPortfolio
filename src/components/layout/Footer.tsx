@@ -1,33 +1,16 @@
-import { Github, Linkedin, Mail, Instagram } from 'lucide-react';
+import { profile } from '../../data/profile';
 
 export default function Footer() {
   return (
-    <footer className="bg-surface border-t border-border py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-        <div className="flex space-x-6 mb-8">
-          <a href="https://github.com/SmileyHackerz" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-primary transition-colors">
-            <span className="sr-only">GitHub</span>
-            <Github className="w-6 h-6" />
-          </a>
-          <a href="https://www.linkedin.com/in/mohamed-faye-1420663a8" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-primary transition-colors">
-            <span className="sr-only">LinkedIn</span>
-            <Linkedin className="w-6 h-6" />
-          </a>
-          <a href="https://www.instagram.com/mouh_negro/" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-primary transition-colors">
-            <span className="sr-only">Instagram</span>
-            <Instagram className="w-6 h-6" />
-          </a>
-          <a href="mailto:fayemohamed82@gmail.com" className="text-muted hover:text-primary transition-colors">
-            <span className="sr-only">Email</span>
-            <Mail className="w-6 h-6" />
-          </a>
-        </div>
-        <p className="text-muted text-sm font-mono text-center">
-          &copy; {new Date().getFullYear()} Portfolio Ingénierie Logicielle. Tous droits réservés.
+    <footer className="relative border-t border-white/[0.06]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-sm text-muted">
+        <a href="#home" className="font-mono text-foreground">
+          {profile.firstName.toLowerCase()}<span className="text-primary">.</span>{profile.lastName.toLowerCase()}
+        </a>
+        <p>
+          {new Date().getFullYear()} · {profile.firstName} {profile.lastName}, {profile.location}
         </p>
-        <p className="text-muted/70 text-xs font-mono mt-2 text-center">
-          Construit avec React, Tailwind CSS et Motion.
-        </p>
+        <p className="text-muted/70">React, Tailwind CSS, Motion.</p>
       </div>
     </footer>
   );

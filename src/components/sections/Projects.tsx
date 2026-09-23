@@ -1,47 +1,68 @@
-import React from 'react';
-import { motion } from 'motion/react';
-import { Code, Server, Database, Shield, Cpu, Globe, Terminal, Cloud } from 'lucide-react';
-import SectionHeading from '../ui/SectionHeading';
-import ProjectCard from '../ui/ProjectCard';
-import { projectsData } from '../../data/projects';
-import LogoLoop from '../ui/LogoLoop';
-import { fadeInUp } from '../../utils/animations';
+import { useState } from 'react';
+import { LayoutGroup, motion, useReducedMotion } from 'motion/react';
+import { projectsData, projectCategories, type ProjectCategory } from '../../data/projects';
+import ProjectScene from '../ui/ProjectScene';
 
-const techLogos = [
-  { id: '1', name: 'React', icon: <Code className="w-6 h-6 md:w-8 md:h-8" /> },
-  { id: '2', name: 'Node.js', icon: <Server className="w-6 h-6 md:w-8 md:h-8" /> },
-  { id: '3', name: 'PostgreSQL', icon: <Database className="w-6 h-6 md:w-8 md:h-8" /> },
-  { id: '4', name: 'Security', icon: <Shield className="w-6 h-6 md:w-8 md:h-8" /> },
-  { id: '5', name: 'System', icon: <Cpu className="w-6 h-6 md:w-8 md:h-8" /> },
-  { id: '6', name: 'Network', icon: <Globe className="w-6 h-6 md:w-8 md:h-8" /> },
-  { id: '7', name: 'Linux', icon: <Terminal className="w-6 h-6 md:w-8 md:h-8" /> },
-  { id: '8', name: 'AWS', icon: <Cloud className="w-6 h-6 md:w-8 md:h-8" /> },
-];
+type Filter = ProjectCategory | 'all';
 
 export default function Projects() {
-  return (
-    <section id="projects" className="py-24 bg-surface/30 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <SectionHeading 
-          title="Projets" 
-          subtitle="Une sélection de mes travaux récents et projets académiques." 
-        />
-        
-        <motion.div 
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="mb-16"
-        >
-          <LogoLoop items={techLogos} speed={40} className="shadow-xl" />
-        </motion.div>
+  const [filter, setFilter] = useState<Filter>('all');
+  const reduce = useReducedMotion();
+  const visible = projectsData.filter((p) => filter === 'all' || p.category === filter);
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-          {projectsData.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
-          ))}
+  return (
+    <section id="projects" className="relative">
+      {/* En-tête de section, non collant : il défile avant la première scène */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-14 lg:pt-36 lg:pb-20">
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-2xl">
+            <h2 className="text-4xl md:text-6xl font-bold tracking-[-0.04em] leading-[0.95] text-balance">
+              Six projets, <span className="text-muted">six chapitres.</span>
+            </h2>
+            <p className="mt-5 text-lg text-muted max-w-[58ch] leading-relaxed">
+              Des applications livrées pour de vrais besoins. Chaque projet porte son état réel et sa fiche.
+            </p>
+          </div>
+
+          <LayoutGroup id="project-filters">
+            <div
+              role="tablist"
+              aria-label="Filtrer les projets"
+              className="flex flex-wrap gap-1 rounded-full border border-border bg-surface/60 p-1 self-start lg:self-auto"
+            >
+              {projectCategories.map((c) => {
+                const active = c.id === filter;
+                return (
+                  <button
+                    key={c.id}
+                    role="tab"
+                    aria-selected={active}
+                    onClick={() => setFilter(c.id)}
+                    className={`relative rounded-full px-4 py-2 text-sm transition-colors ${
+                      active ? 'text-background' : 'text-muted hover:text-foreground'
+                    }`}
+                  >
+                    {active && (
+                      <motion.span
+                        layoutId="filter-pill"
+                        transition={reduce ? { duration: 0 } : { type: 'spring', stiffness: 420, damping: 34 }}
+                        className="absolute inset-0 rounded-full bg-foreground"
+                      />
+                    )}
+                    <span className="relative">{c.label}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </LayoutGroup>
         </div>
+      </div>
+
+      {/* Scènes collantes empilées */}
+      <div className="relative">
+        {visible.map((project, i) => (
+          <ProjectScene key={project.id} project={project} index={i} total={visible.length} />
+        ))}
       </div>
     </section>
   );
