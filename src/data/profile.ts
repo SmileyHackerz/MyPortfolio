@@ -9,6 +9,8 @@ export const profile = {
   availableLabel: 'Ouvert aux opportunités',
   bio: "Étudiant en Licence 3 Informatique à l'ESP de Dakar, titulaire d'un DUT Informatique. Je conçois des applications web complètes, du modèle de données à l'interface, avec une attention particulière à la sécurité et aux réseaux.",
   photo: '/profile.webp',
+  /** Portrait noir et blanc du hero, distinct de celui de la section « À propos » */
+  portrait: '/profile-hero.webp',
   cv: '/cv.pdf',
   email: 'fayemohamed82@gmail.com',
   phone: '+221 78 525 99 28',

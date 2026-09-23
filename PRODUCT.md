@@ -40,7 +40,7 @@ Angle confirmé : **full-stack, projets personnels et projets réels à forte en
 - Chaque projet doit pouvoir être **montré** même sans démo : captures et courte vidéo d'écran dans une fiche projet. Les médias projets arrivent après (Mohamed les fournit).
 - Stack imposée par le code existant : React 19, Vite 6, TypeScript, Tailwind CSS 4, Motion. Pas de framework serveur.
 - Un écran d'entrée « séquence boot terminal » est voulu (remplace l'ancien « Veux-tu entrer dans mon monde ? OUI/NON »), jouée une fois par session, passable d'un clic.
-- Le hero affiche le nom (MOHAMED FAYE) plutôt qu'une accroche. La carte à sa droite est une session shell (`whoami`, `cat formation.txt`, `stack --principale`, `status`) et non le portrait : choix de Mohamed le 22/09/2026, pour que la photo n'apparaisse qu'une fois, dans « À propos ». Les commandes et leurs réponses doivent rester vraies.
+- Le hero affiche le nom (MOHAMED FAYE) plutôt qu'une accroche. La carte à sa droite porte le portrait noir et blanc (`public/profile-hero.webp`), fourni par Mohamed le 23/09/2026 : la session shell qui l'avait remplacé un temps est abandonnée. Deux portraits distincts cohabitent donc, le noir et blanc au hero et le portrait couleur dans « À propos ».
 - Terminologie : « Développeur full-stack », « Licence 3 Informatique », « ESP Dakar », « DUT Informatique », « Formation HCIA-Datacom V1.0 (Huawei Talent Online) » : c'est un certificat de formation, pas la certification Huawei officielle ; ne pas le présenter comme tel.
 - Langue du site : français uniquement.
 
@@ -54,7 +54,7 @@ Angle confirmé : **full-stack, projets personnels et projets réels à forte en
 
 ## Evidence on Hand
 
-- Photo de profil : `public/profile.webp`, portrait fourni par Mohamed le 22/09/2026 (512x593). Utilisée uniquement dans « À propos ».
+- Portraits : `public/profile.webp` (couleur, 512x593, fourni le 22/09/2026) dans « À propos » ; `public/profile-hero.webp` (noir et blanc, 928x1141, fourni le 23/09/2026) dans la carte du hero.
 - Captures : `public/projects-jammline.png` seulement. Aucune capture pour MCI, Cabinet Mame Fary, Amsa Shop, Pencc Mi, Focus Bot : ne pas en inventer, l'emplacement « Captures à venir » s'affiche à la place.
 - Certificat de formation Huawei : `public/certificat-hcia-datacom.webp` (code EBG20250504000231, émis le 2025-05-04).
 - CV : `public/cv.pdf`.

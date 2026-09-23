@@ -1,7 +1,6 @@
 import { motion, useReducedMotion } from 'motion/react';
-import { ArrowRight, Download, Github, Linkedin, Instagram } from 'lucide-react';
+import { ArrowRight, Download, Github, Linkedin, Instagram, MapPin } from 'lucide-react';
 import ParticleField from '../ui/ParticleField';
-import ShellCard from '../ui/ShellCard';
 import ParticleGlobe from '../ui/ParticleGlobe';
 import { profile } from '../../data/profile';
 
@@ -97,27 +96,55 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.6, ease }}
             className="lg:col-span-5 lg:justify-self-end w-full max-w-md"
           >
-            <div className="panel schematic overflow-hidden">
-              <ShellCard />
+            <div className="panel p-3">
+              <div className="relative h-[clamp(14rem,44dvh,26rem)] w-full overflow-hidden rounded-2xl bg-white">
+                <img
+                  src={profile.portrait}
+                  alt={`${profile.firstName} ${profile.lastName}`}
+                  className="h-full w-full object-cover object-[52%_8%]"
+                  fetchPriority="high"
+                  width={928}
+                  height={1141}
+                />
+                {/* Pastille sombre : le portrait est sur fond clair, l'inverse serait illisible */}
+                <span className="absolute left-3 top-3 flex items-center gap-2 rounded-full border border-white/10 bg-background/85 px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.16em] text-secondary backdrop-blur">
+                  <span className="h-1.5 w-1.5 rounded-full bg-secondary" aria-hidden />
+                  {profile.availableLabel}
+                </span>
+              </div>
 
-              <div className="flex items-center justify-between border-t border-white/[0.06] px-4 py-3">
-                <div className="flex items-center gap-1">
-                  {socials.map(({ href, Icon, label }) => (
-                    <a
-                      key={label}
-                      href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={label}
-                      className="flex h-9 w-9 items-center justify-center rounded-full text-muted transition-colors hover:bg-white/5 hover:text-foreground"
-                    >
-                      <Icon className="h-4 w-4" />
-                    </a>
-                  ))}
+              <div className="px-3 pb-2 pt-4">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-xl font-bold tracking-tight text-foreground">
+                      {profile.firstName} {profile.lastName}
+                    </p>
+                    <p className="text-sm text-muted">{profile.title}</p>
+                  </div>
+                  <span className="flex shrink-0 items-center gap-1 pt-1 text-xs text-muted">
+                    <MapPin className="h-3 w-3" /> Dakar
+                  </span>
                 </div>
-                <a href="#contact" className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-foreground">
-                  Me contacter <ArrowRight className="h-3.5 w-3.5" />
-                </a>
+
+                <div className="mt-5 flex items-center justify-between border-t border-white/5 pt-4">
+                  <div className="flex items-center gap-1">
+                    {socials.map(({ href, Icon, label }) => (
+                      <a
+                        key={label}
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={label}
+                        className="flex h-9 w-9 items-center justify-center rounded-full text-muted transition-colors hover:bg-white/5 hover:text-foreground"
+                      >
+                        <Icon className="h-4 w-4" />
+                      </a>
+                    ))}
+                  </div>
+                  <a href="#contact" className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-foreground">
+                    Me contacter <ArrowRight className="h-3.5 w-3.5" />
+                  </a>
+                </div>
               </div>
             </div>
           </motion.aside>
