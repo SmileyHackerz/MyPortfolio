@@ -55,7 +55,10 @@ Angle confirmé : **full-stack, projets personnels et projets réels à forte en
 ## Evidence on Hand
 
 - Portraits : `public/profile.webp` (couleur, 512x593, fourni le 22/09/2026) dans « À propos » ; `public/profile-hero.webp` (noir et blanc, 928x1141, fourni le 23/09/2026) dans la carte du hero.
-- Captures : `public/projects-jammline.png` seulement. Aucune capture pour MCI, Cabinet Mame Fary, Amsa Shop, Pencc Mi, Focus Bot : ne pas en inventer, l'emplacement « Captures à venir » s'affiche à la place.
+- Captures, toutes prises le 23/09/2026 et converties en WebP 1280 px : `projects-jammline-{1,2}.webp` (connexion et inscription, prises sur la démo Vercel ; l'ancienne `projects-jammline.png` montrait le même écran en plus étroit et a été supprimée), `projects-cabinet-mame-fary-{1,2}.webp` (site de production), `projects-amsa-shop-{1,2}.webp` et `projects-pencc-mi-{1,2}.webp` (lancés en local) et `projects-mci-{1,2,3}.webp` — tableau de bord, historique des incidents et écran de connexion. Les deux premières viennent de Mohamed, connecté à l'application ; les données affichées sont des données de test (Agent 01, quatre événements), aucune donnée d'exploitation réelle d'ADS.
+- MCI tourne dans WSL Ubuntu, à `~/Projets/mf_mci`, via `docker compose` : frontend sur le port 80, API sur 3000, PostgreSQL sur 5432. Docker y exige `sudo` avec mot de passe, et WSL s'arrête tout seul après un moment. L'intérieur de l'application est derrière une authentification : les captures du tableau de bord viennent de Mohamed.
+- Focus Bot (`C:\Users\fayem\Desktop\FocusBot`) est un programme de bureau sans interface : webcam, OpenCV, `winsound`. Aucune capture n'a de sens sans un visage devant la caméra, et le lancer déclenche une alarme sonore en boucle. Un schéma de sa boucle est affiché à la place, explicitement étiqueté « Schéma ».
+- Les bases locales d'Amsa Shop contiennent des données de test : ne capturer que les sections au contenu réel, jamais les grilles d'articles.
 - Certificat de formation Huawei : `public/certificat-hcia-datacom.webp` (code EBG20250504000231, émis le 2025-05-04).
 - CV : `public/cv.pdf`.
 - Code source des projets disponible localement (stacks vérifiées) : `C:\Users\fayem\Desktop\mf_mci`, `C:\Users\fayem\Documents\2goatsdev\Cabinetmamefary`, `C:\Users\fayem\Documents\2goatsdev\amsa-shop`, `C:\xampp\htdocs\Pencc Mi`.
@@ -68,3 +71,5 @@ Angle confirmé : **full-stack, projets personnels et projets réels à forte en
 3. **Lisible par un non-technique, crédible pour un technique.** Le client comprend l'usage, le recruteur voit la stack et l'architecture.
 4. **Honnêteté des statuts.** « En ligne », « Bientôt en ligne », « Projet interne » : chaque projet porte son vrai état.
 5. **Mobile d'abord pour la lecture, desktop pour le spectacle.** Les effets ne doivent jamais empêcher de lire le contenu sur un téléphone.
+
+- JammLine : `projects-jammline-{1,2,3}.webp` — file d'attente côté médecin, suivi du ticket côté patient sur mobile, écran de connexion. Les deux premières viennent de Mohamed, connecté à l'application ; la capture mobile ne fait que 261 px de large à la source et a été agrandie au double. Les comptes de démonstration affichés sur l'écran de connexion public sont verrouillés, l'intérieur n'est donc pas atteignable sans identifiants.

@@ -3,6 +3,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
 import { ArrowRight, ArrowUpRight, Github, ImageOff } from 'lucide-react';
 import type { Project } from '../../data/projects';
 import StatusPill from './StatusPill';
+import ProjectDiagram from './ProjectDiagram';
 import { openProject, projectHref } from '../../lib/router';
 
 interface ProjectSceneProps {
@@ -178,9 +179,13 @@ export default function ProjectScene({ project, index, total }: ProjectSceneProp
                   src={cover}
                   alt={`Capture d'écran de ${project.title}`}
                   loading="lazy"
-                  className="w-full aspect-[16/10] object-cover object-top rounded-2xl"
+                  /* Format naturel : les captures n'ont pas toutes la même forme, et forcer
+                     un 16/10 rognait les tableaux de bord larges sur les côtés. */
+                  className="h-auto max-h-[56vh] w-full rounded-2xl object-cover object-top"
                 />
               </div>
+            ) : project.diagram ? (
+              <ProjectDiagram label={project.diagram.label} steps={project.diagram.steps} />
             ) : (
               <div
                 className="flex aspect-[16/10] w-full flex-col items-center justify-center gap-3 rounded-3xl border border-dashed border-white/15 bg-background/40 text-muted"

@@ -35,6 +35,11 @@ export interface Project {
   demoPending?: string;
   /** Première image = couverture. Vide tant que Mohamed n'a pas fourni les captures. */
   images: string[];
+  /**
+   * Pour un programme sans interface à photographier : les étapes réelles de sa boucle.
+   * Affiché à la place de la couverture, et clairement présenté comme un schéma.
+   */
+  diagram?: { label: string; steps: string[] };
   video?: string;
   /** Nappe de couleur de la scène : deux teintes de la palette et, en option, la position du foyer lumineux */
   scene: { a: string; b: string; focal?: { x: string; y: string } };
@@ -72,7 +77,7 @@ export const projectsData: Project[] = [
       'Déploiement Docker Compose',
     ],
     workflow: ['Déclaration', 'Suivi', 'Actions', 'Résolution'],
-    images: [],
+    images: ['/projects-mci-1.webp', '/projects-mci-2.webp', '/projects-mci-3.webp'],
     scene: { a: '#F59E0B', b: '#3B82F6', focal: { x: '18%', y: '30%' } },
   },
   {
@@ -91,7 +96,7 @@ export const projectsData: Project[] = [
     period: '2026',
     role: 'Développeur full-stack',
     demo: 'https://cabinetdentairemamefary.com',
-    images: [],
+    images: ['/projects-cabinet-mame-fary-1.webp', '/projects-cabinet-mame-fary-2.webp'],
     scene: { a: '#22C55E', b: '#3B82F6', focal: { x: '30%', y: '70%' } },
   },
   {
@@ -110,7 +115,7 @@ export const projectsData: Project[] = [
     period: '2026',
     role: 'Développeur full-stack',
     demoPending: 'https://amsashop.com',
-    images: [],
+    images: ['/projects-amsa-shop-1.webp', '/projects-amsa-shop-2.webp'],
     scene: { a: '#3B82F6', b: '#60A5FA', focal: { x: '70%', y: '35%' } },
   },
   {
@@ -129,7 +134,7 @@ export const projectsData: Project[] = [
     period: '2025',
     role: 'Développeur',
     github: 'https://github.com/SmileyHackerz/Pencc-Mi',
-    images: [],
+    images: ['/projects-pencc-mi-1.webp', '/projects-pencc-mi-2.webp'],
     scene: { a: '#3B82F6', b: '#22C55E', focal: { x: '82%', y: '75%' } },
   },
   {
@@ -139,6 +144,7 @@ export const projectsData: Project[] = [
     summary: "Gestion des files d'attente des hôpitaux pour fluidifier le parcours patient.",
     description: [
       "Plateforme de gestion des files d'attente des hôpitaux pour optimiser le flux des patients : prise de ticket, suivi de la position en temps réel et tableau de bord pour le personnel.",
+      "Trois rôles se partagent l'application : le patient suit son ticket et sa position depuis son téléphone, le médecin gère sa file depuis son poste, l'administrateur supervise l'ensemble. L'interface est pensée pour le mobile côté patient, pour l'écran large côté soignant.",
     ],
     category: 'web',
     status: 'online',
@@ -148,7 +154,7 @@ export const projectsData: Project[] = [
     role: 'Développeur frontend',
     github: 'https://github.com/SmileyHackerz/JammLine',
     demo: 'https://jammline-app.vercel.app/',
-    images: ['/projects-jammline.png'],
+    images: ['/projects-jammline-1.webp', '/projects-jammline-2.webp', '/projects-jammline-3.webp'],
     scene: { a: '#22C55E', b: '#22C55E', focal: { x: '45%', y: '20%' } },
   },
   {
@@ -158,6 +164,7 @@ export const projectsData: Project[] = [
     summary: 'Assistant de concentration par vision par ordinateur.',
     description: [
       "Un bot développé en Python qui analyse visuellement l'utilisateur via la webcam et déclenche une alarme lorsqu'il détecte une distraction.",
+      "Le programme tourne en arrière-plan, sans interface : un classifieur Haar cherche les yeux dans chaque image du flux. Passé trois secondes sans regard détecté, un thread lance le son en boucle et ouvre une fenêtre OpenCV. Il n'y a donc pas d'écran à montrer, seulement une boucle à décrire.",
     ],
     category: 'python',
     status: 'code',
@@ -167,6 +174,15 @@ export const projectsData: Project[] = [
     role: 'Développeur',
     github: 'https://github.com/SmileyHackerz/Focus-Bot',
     images: [],
+    diagram: {
+      label: 'La boucle du programme',
+      steps: [
+        'Flux webcam',
+        'Détection des yeux · Haar',
+        '3 s sans regard',
+        'Alarme sonore + squelette',
+      ],
+    },
     scene: { a: '#3B82F6', b: '#3B82F6', focal: { x: '15%', y: '80%' } },
   },
 ];

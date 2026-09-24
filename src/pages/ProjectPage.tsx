@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
 import { ArrowLeft, ArrowRight, ArrowUpRight, Github, ImageOff } from 'lucide-react';
+import ProjectDiagram from '../components/ui/ProjectDiagram';
 import { findProject, projectsData, statusLabel } from '../data/projects';
 import { profile } from '../data/profile';
 import StatusPill from '../components/ui/StatusPill';
@@ -35,7 +36,7 @@ export default function ProjectPage({ id }: { id: string }) {
 
   const index = projectsData.findIndex((p) => p.id === project.id);
   const next = projectsData[(index + 1) % projectsData.length];
-  const hasMedia = project.images.length > 0 || !!project.video;
+  const hasMedia = project.images.length > 0 || !!project.video || !!project.diagram;
 
   const meta = [
     { k: 'Rôle', v: project.role },
@@ -142,18 +143,24 @@ export default function ProjectPage({ id }: { id: string }) {
             />
           )}
           {project.images.length > 0 && (
-            <div className={`grid gap-4 ${project.images.length > 1 ? 'md:grid-cols-2' : ''} ${project.video ? 'mt-4' : ''}`}>
+            <div className={`grid items-start gap-4 ${project.images.length > 1 ? 'md:grid-cols-2' : ''} ${project.video ? 'mt-4' : ''}`}>
               {project.images.map((src, i) => (
                 <figure key={src} className={i === 0 && project.images.length % 2 === 1 ? 'md:col-span-2' : ''}>
                   <img
                     src={src}
                     alt={`${project.title}, capture ${i + 1}`}
                     loading={i === 0 ? 'eager' : 'lazy'}
-                    className="w-full rounded-3xl border border-white/10 bg-surface object-cover"
+                    /* Les captures vont du large tableau de bord à l'écran de téléphone.
+                       Largeur libre et hauteur plafonnée : une capture mobile s'affiche
+                       à sa taille, sans être étirée sur toute la colonne. */
+                    className="mx-auto h-auto max-h-[70vh] w-auto max-w-full rounded-3xl border border-white/10 bg-surface"
                   />
                 </figure>
               ))}
             </div>
+          )}
+          {project.images.length === 0 && !project.video && project.diagram && (
+            <ProjectDiagram label={project.diagram.label} steps={project.diagram.steps} />
           )}
           {!hasMedia && (
             <div className="flex items-center gap-4 rounded-3xl border border-dashed border-white/15 bg-surface/40 px-6 py-8 text-muted">

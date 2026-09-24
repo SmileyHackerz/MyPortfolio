@@ -94,10 +94,10 @@ export default function Hero() {
             initial={reduce ? false : { opacity: 0, y: 40, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 1, delay: 0.6, ease }}
-            className="lg:col-span-5 lg:justify-self-end w-full max-w-md"
+            className="w-full max-w-[min(28rem,calc(52dvh*0.813+1.5rem))] lg:col-span-5 lg:justify-self-end"
           >
             <div className="panel p-3">
-              <div className="relative mx-auto aspect-[928/1141] w-[min(100%,calc(52dvh*0.813))] overflow-hidden rounded-2xl bg-white">
+              <div className="relative aspect-[928/1141] w-full overflow-hidden rounded-2xl bg-white">
                 <img
                   src={profile.portrait}
                   alt={`${profile.firstName} ${profile.lastName}`}
